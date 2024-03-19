@@ -23,7 +23,11 @@ const duracaoFoco = 1500;
 const duracaoDescansoCurto = 300; 
 const duracaoDescansoLongo = 900;
 
+<<<<<<< HEAD
 let tempoDecorridoEmSegundos = 5 
+=======
+let tempoDecorridoEmSegundos = 1500 
+>>>>>>> 2b236cf4f818d353a244411f478892a5c529f32e
 let intervaloId = null
 
 //sons
