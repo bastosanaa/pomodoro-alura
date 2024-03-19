@@ -23,7 +23,7 @@ const duracaoFoco = 1500;
 const duracaoDescansoCurto = 300; 
 const duracaoDescansoLongo = 900;
 
-let tempoDecorridoEmSegundos = null 
+let tempoDecorridoEmSegundos = 5 
 let intervaloId = null
 
 //sons
@@ -89,6 +89,12 @@ const contagemRegressiva = () => {
     if (tempoDecorridoEmSegundos <= 0){
         TempoFinalizadoSom.play()
         alert('Tempo Finalizado!')
+        // evento de finalizacao de tarefa
+        const focoAtivo = html.getAttribute('data-contexto') == 'foco'
+        if (focoAtivo) {
+            const evento = new CustomEvent('FocoFinalizado')
+            document.dispatchEvent(evento)
+        }
         zerarContagemRegressiva()
         return
     }
